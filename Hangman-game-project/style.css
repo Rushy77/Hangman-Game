@@ -1,0 +1,317 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: url(images/bgimg.png) no-repeat center center/ cover;
+}
+
+.container {
+    width: 700px;
+    height: 80vh;
+}
+
+.header {
+    font-size: 1.8rem;
+    margin: 70px auto;
+    background-color: rgb(247, 125, 37);
+    padding-top: 7px;
+    padding-bottom: 15px;
+    border: solid 3px black;
+    width: 100%;
+    border-radius: 15px;
+    color: rgb(255, 251, 251);
+    box-shadow: black 1.5px 3px 5px 6px;
+    transition: .5s;
+}
+
+.header:hover {
+    font-size: 1.8rem;
+    margin: 70px auto;
+    background-color: rgb(247, 125, 37);
+    padding-top: 7px;
+    padding-bottom: 15px;
+    border: solid 3px black;
+    width: 100%;
+    border-radius: 15px;
+    color: black;
+    box-shadow: black 5px 10px;
+    transition: .2s;
+}
+
+.content {
+    background-color: white;
+    width: 75%;
+    align-items: center;
+    padding: 20px 40px;
+    border: solid 2px black;
+    box-shadow: 1.5px 3px 5px 6px;
+    border-radius: 20px;
+    margin: 0 auto;
+
+    animation-name: animatecontent;
+    animation-duration: .5s;
+}
+
+@keyframes animatecontent {
+    from{
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+.heading {
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.button-area {
+    margin-bottom: 10px;
+}
+
+.button-area .startbtn {
+    background-color: rgb(3, 195, 3);
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.button-area .startbtn:hover {
+    background-color: rgb(247, 125, 37);;
+    padding: 5px;
+    margin-right: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: .3s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-area .rulesbtn {
+    background-color: rgb(209, 202, 3);
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button-area .rulesbtn:hover {
+    background-color: rgb(247, 125, 37);;
+    padding: 5px;
+    margin-right: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: .3s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rules {
+    display: none;
+}
+
+.rules.rulesbtn {
+    display: block;
+    border-top: solid 1px black;
+    padding-top: 5px;
+}
+
+/* difficultypage.html Style */
+
+.back-arrow {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    background-color: white;
+    font-size: 2rem;
+    padding: 5px 10px 9px 10px;
+    border-radius:50px;
+    border: solid 4px black;
+    cursor: pointer;
+}
+
+.button-area .difficulty-btn#beginner-btn{
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 23px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(12, 205, 12);
+    border: solid 1.5px;
+    border-radius: 5px;
+}
+
+.difficulty-btn#amateur-btn{
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 23px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: greenyellow;
+    border: solid 1.5px;
+    border-radius: 5px;
+}
+
+.difficulty-btn#intermediate-btn{
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 23px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(251, 251, 86);
+    border: solid 1.5px;
+    border-radius: 5px;
+}
+
+.difficulty-btn#pro-btn{
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 23px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 173, 21);
+    border: solid 1.5px;
+    border-radius: 5px;
+}
+
+.difficulty-btn#expert-btn{
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 23px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(251, 67, 67);
+    border: solid 1.5px;
+    border-radius: 5px;
+}
+
+.button-area .difficulty-btn#beginner-btn:hover{
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.button-area .difficulty-btn#amateur-btn:hover{
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.button-area .difficulty-btn#intermediate-btn:hover{
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.button-area .difficulty-btn#pro-btn:hover{
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.button-area .difficulty-btn#expert-btn:hover{
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+/* begginerpage.html Styling */
+
+.content .attempts-area {
+    text-align: left;
+    display: flex;
+}
+
+.attempts-area .attempts {
+    margin-left: 5px;
+}
+
+.attempts-area .reset-btn {
+    margin-left: 315px;
+    font-size: 1.9rem;
+    background-color: rgb(231, 4, 4);
+    color: white;
+    padding: 2px 8px 0px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hidden-word{
+    font-size: 4rem;
+    pointer-events: none;
+}
+
+.input-area {
+    margin: 22px 0 15px 0;
+}
+
+#input-letter {
+    width: 35px;
+    border: none;
+    border-bottom: solid 2px black;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.check-btn{
+    width: 100px;
+    height: 27px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 4px 0 22px;
+    background-color: rgb(158, 254, 13);
+    cursor: pointer;
+}
+
+.check-btn:hover{
+    width: 100px;
+    height: 27px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 4px 0 22px;
+    background-color: rgb(250, 124, 56);
+    color: white;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.encouragement {
+    margin-top: 10px;
+    color: rgb(213, 61, 10);
+    font-size: 1.1rem;
+    display: block;
+}

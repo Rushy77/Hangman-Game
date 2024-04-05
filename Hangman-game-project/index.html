@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hangman Game</title>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Global Font Links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <!-- FontAwesome Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Hangman Game</h1>
+            </div>
+            <div class="content">
+                <div class="heading">
+                    <h2>Welcome to Hangman Game</h2>
+                </div>
+                <div class="button-area">
+                    <button class="startbtn">Start Game</button><br>
+                    <button class="rulesbtn">Game Rules</button>
+                </div>
+                <div class="rules-area">
+                    <p class="rules"> Hangman game is a word-guessing game where the player tries to guess a hidden word by suggesting letters within a certain number of attempts. The game displays a series of underscores representing the letters of the hidden word, and the player guesses letters one at a time. If the guessed letter is present in the word, the corresponding underscores are replaced with the correct letter. If the guessed letter is not in the word, the player loses an attempt and part of a hangman figure is gradually drawn. The player wins if they guess the word correctly before running out of attempts, and loses if the hangman figure is completed before guessing the word.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="app.js"></script>
+</html>
