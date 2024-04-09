@@ -11,78 +11,79 @@ backarrow.addEventListener('click', function(){
     window.location='../difficultypage.html';
 });
 
-function getAndDisplayRandomWord(){
-    let attempts = 5;
+let randomWordIndex = Math.floor(Math.random() * words.length);
 
-    attemptsleft.innerText = '5';
+let randomWord = words[randomWordIndex];
 
-    const randomWordIndex = Math.floor(Math.random() * words.length);
+let guessedWord = [];
 
-    const randomWordLetters = words[randomWordIndex].split('');
+let lettersGuessed = [];
 
-    const firstLetter = randomWordLetters[0];
-    const secondLetter = randomWordLetters[1];
+let attempts = 7;
 
-    const underscoringString = '_'.repeat(randomWordLetters.length);
-
-    hiddenword.innerText = underscoringString;
-
-    console.log(randomWordLetters);
-    console.log(firstLetter);
-    console.log(underscoringString);
-
-    
-
-    function checkLetter() {
-
-        const letter = letterinput.value;
-
-    
-        let isPresent = false;
-        for (let i = 0; i < randomWordLetters.length; i++){
-            if (randomWordLetters[i].includes(letter)){
-                isPresent = true
-                break;
-
-            }
-        }
-            if (isPresent) {
-                encouragement.innerHTML = "<p class = 'encouragement' style = 'color: green;'> Welldone! </p> ";
-                replaceText();
-            }else{
-                encouragement.innerHTML = "<p class = 'encouragement' style = 'color: red;'> Try Again! </p> ";
-                attempts--;
-                attemptsleft.innerText = attempts.toString();
-            }  
-
-            if (letter === ''){
-                encouragement.innerHTML = "<p class = 'encouragement'> Enter a letter! </p> ";
-            }
-
-
-            if (attempts === 0){
-                window.location = 'gameover.html';
-            }
-
-        function replaceText(){
-            for (let i = 0; i < randomWordLetters.length; i++){
-                if(firstLetter.includes(letter)){
-                    hiddenword.innerText = underscoringString.replace('_ ', letter);
-                }if(secondLetter.includes(letter)){
-                    hiddenword.innerText = underscoringString.replace('_  ', letter);
-                }else{
-                    hiddenword.innerText = underscoringString.replace('_   ', letter);
-                }
-            }
-        }
-
+function initializeGame(){
+    for (let i = 0; i < randomWord.length; i++){
+        guessedWord.push('_');
     }
-    checkbtn.addEventListener('click', checkLetter);
+    
+    hiddenword.innerText = guessedWord.join(' ');
 
-    resetbtn.addEventListener('click', function(){
-        window.location = 'beginnerpage.html';
-    });
+    attemptsleft.innerText = attempts;
+    
+    console.log(randomWord);
+}
+
+    
+
+function checkLetter() {
+
+    let letter = letterinput.value;
+
+    lettersGuessed.push(letter);
+    let isPresent = false;
+    for (let i = 0; i < randomWord.length; i++){
+        if (randomWord[i] === letter){
+            guessedWord[i] = letter;
+            encouragement.innerHTML = "<p class = 'encouragement' style = 'color: green;'> Welldone! </p> ";
+            isPresent = true;
+        }
+    }
+    if (!isPresent){
+        attempts--;
+        attemptsleft.innerText = attempts;
+        encouragement.innerHTML = "<p class = 'encouragement' style = 'color: red;'> Try Again! </p> ";
+    }
+
+    hiddenword.innerText = guessedWord.join(' ');
+    checkGameStatus();
+}
+
+function checkGameStatus(){
+    if(guessedWord.join('') === randomWord){
+        alert('Congratulations! You guessed the word correctly.');
+        resetGame();
+    }else if (attempts === 0) {
+        alert('Game over! The word was: ' + randomWord);
+        resetGame();
+    }
+}
+
+function resetGame() {
+    randomWordIndex = Math.floor(Math.random() * words.length);
+    randomWord = words[randomWordIndex];
+    guessedWord = [];
+    lettersGuessed = [];
+    attempts = 7;
+    initializeGame();
 }
 
 
-window.onload = getAndDisplayRandomWord;
+checkbtn.addEventListener('click', checkLetter);
+checkbtn.addEventListener('click', function(){
+    letterinput.value = '';
+});
+
+resetbtn.addEventListener('click', resetGame);
+
+
+initializeGame();
